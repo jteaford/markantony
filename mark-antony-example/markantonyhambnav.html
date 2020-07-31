@@ -1,0 +1,120 @@
+<div class="main-header__burger">
+            <a role="button" href="javascript:void('')" id="burger-menu" class="main-header__burger-link">
+                <span class="screenreader-text" id="menu-label">Open menu</span>
+                <div class="btn-menu main-header__burger-btn">
+                    <div></div> <!-- line --> 
+                    <div></div> <!-- line --> 
+                    <div></div> <!-- line -->
+                </div>
+            </a>
+        </div>
+        
+<style>
+        #burger-menu:hover .btn-menu div::before {
+        -webkit-transform: translateX(-26px);
+        transform:translateX(-26px)
+    }
+
+    #burger-menu:hover .btn-menu div::after {
+        -webkit-transform: translateX(0);
+        transform:translateX(0)
+    }
+
+    .btn-menu {
+        width: 26px;
+        height: 26px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content:center
+    }
+
+    .btn-menu div {
+        width: 100%;
+        height: 1px;
+        display: block;
+        position: relative;
+        margin-bottom: 5px;
+        margin-left: auto;
+        -webkit-transition: background .3s 0s ease, opacity .2s ease, -webkit-transform .3s ease;
+        transition: background .3s 0s ease, opacity .2s ease, -webkit-transform .3s ease;
+        transition: background .3s 0s ease, transform .3s ease, opacity .2s ease;
+        transition: background .3s 0s ease, transform .3s ease, opacity .2s ease, -webkit-transform .3s ease;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-transform-origin: center;
+        transform-origin:center
+    }
+
+    .btn-menu div::after, .btn-menu div::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: #FFF;
+        bottom: 0;
+        width: 100%;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-transition: -webkit-transform .5s ease;
+        transition: -webkit-transform .5s ease;
+        transition: transform .5s ease;
+        transition:transform .5s ease, -webkit-transform .5s ease
+    }
+
+    .btn-menu div::after {
+        -webkit-transform: translateX(36px);
+        transform:translateX(36px)
+    }
+
+    .btn-menu div:nth-of-type(2) {
+        width:72%
+    }
+
+    .btn-menu div:nth-of-type(2)::after, .btn-menu div:nth-of-type(2):before {
+        -webkit-transition-delay: .1s;
+        transition-delay:.1s
+    }
+
+    .btn-menu div:nth-of-type(3) {
+        margin-bottom: 0;
+        width:42%
+    }
+
+    .btn-menu div:nth-of-type(3)::after, .btn-menu div:nth-of-type(3):before {
+        -webkit-transition-delay: .2s;
+        transition-delay:.2s
+    }
+  
+.main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #161616;
+        opacity: 0;
+        pointer-events: none;
+        -webkit-transition: opacity .5s .2s cubic-bezier(.66, .14, .84, .61);
+        transition: opacity .5s .2s cubic-bezier(.66, .14, .84, .61);
+        z-index: 101;
+        display: block !important;
+        min-height:100vh
+    }
+
+    .main-nav.nav-open {
+        opacity: 1;
+        pointer-events:all
+    }
+
+    .main-nav__home {
+        position: absolute;
+        top: 0;
+        left: 1.875em;
+        z-index:1
+    }
+    
+</style>
